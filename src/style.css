@@ -1,5 +1,105 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
 
-body{
-    background: white;
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Ocupa toda la altura de la pantalla */
+  margin: 0;
+  /* Fondo turquesa brillante degradado a púrpura claro */
+  background: linear-gradient(135deg, #00f2fe 0%, #4facfe 40%, #d4b5ff 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative; /* Necesario para anclar la firma al fondo */
+}
+
+/* Panel de control moderno */
+.controls {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px); /* Efecto cristal */
+  padding: 20px 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.inputs-group {
+  display: flex;
+  gap: 15px;
+  font-weight: 500;
+  color: #333;
+}
+
+input {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px;
+  width: 70px;
+  margin-left: 5px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #4facfe;
+  box-shadow: 0 0 5px rgba(79, 172, 254, 0.5);
+}
+
+button {
+  background: linear-gradient(to right, #667eea, #764ba2);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(118, 75, 162, 0.4);
+}
+
+.card {
+  width: 250px;
+  height: 350px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+.heart, .diamond { color: #ff3366; } 
+.spade, .club { color: #2d3436; }
+
+.top-suit { align-self: flex-start; font-size: 50px; line-height: 1; }
+.bottom-suit { align-self: flex-end; font-size: 50px; line-height: 1; transform: rotate(180deg); }
+.number { align-self: center; font-size: 90px; font-weight: bold; line-height: 1; }
+
+
+.fixed-bottom {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-weight: 500;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2); /* Sombra para que lea bien sobre colores claros */
+}
+
+.fixed-bottom a {
+  color: #fff;
+  text-decoration: underline;
+  font-weight: bold;
 }
